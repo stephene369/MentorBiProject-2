@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+
+
+\title{Analyse des Avis Clients et des Comportements de Consommation}
+\author{Spero TESSY \\ Stephene WANTCHEKON}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Méthodes d'Analyse Marketing}
+	
+	\subsection{Questions :}
+	\begin{itemize}
+		\item \textbf{Quel est l'impact des avis clients sur la performance des ventes ?}
+		\begin{itemize}
+			\item Utiliser des métriques de satisfaction client (par exemple, la proportion de produits recommandés) pour identifier les produits à forte performance.
+			\item Calculer la moyenne des notes par produit et déterminer la relation avec les ventes.
+		\end{itemize}
+		
+		\item \textbf{Comment optimiser les campagnes marketing pour améliorer les avis des clients ?}
+		\begin{itemize}
+			\item Quels types de produits ou catégories génèrent des avis positifs ?
+			\item Quelle stratégie marketing pourrait être mise en place pour augmenter les avis positifs ?
+		\end{itemize}
+		
+		\item \textbf{Quels produits génèrent le plus d'avis positifs ?}
+		\begin{itemize}
+			\item Identifier les produits les mieux notés et observer leur performance de vente.
+			\item Comparer les produits ayant un grand nombre d'avis avec ceux ayant peu d'avis pour déterminer s'il existe une corrélation entre la quantité d'avis et la performance de vente.
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Méthode :}
+	\begin{itemize}
+		\item Analyser les \textbf{produits les mieux notés} et observer leur \textbf{fréquence d'achat}.
+		\item Utiliser des \textbf{modèles de régression simple} pour voir l'impact des caractéristiques d'un produit (prix, catégorie, etc.) sur les recommandations.
+	\end{itemize}
+	
+	\subsection{Outils :}
+	\begin{itemize}
+		\item Utiliser \texttt{pandas} pour les calculs de moyennes et pour filtrer les données.
+		\item Utiliser \texttt{seaborn} et \texttt{matplotlib} pour visualiser la distribution des avis et la relation avec les ventes.
+	\end{itemize}
+	
+	\section{Compléter les Données avec le Prix}
+	
+	\subsection{Questions :}
+	\begin{itemize}
+		\item \textbf{Comment trouver les prix des articles pour compléter la base de données ?}
+		\begin{itemize}
+			\item Rechercher les prix des articles à partir des sources externes (site web de l’entreprise, par exemple, ou utiliser des bases de données publiques).
+			\item Ajouter ces informations dans la base de données pour enrichir l’analyse.
+		\end{itemize}
+		
+		\item \textbf{Analyse des relations entre le prix et les avis :}
+		\begin{itemize}
+			\item Une fois les prix ajoutés, analyser les relations entre \textbf{prix} et \textbf{avis clients}.
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Explication :}
+	\begin{itemize}
+		\item Cela permet de mieux comprendre les effets du prix sur les comportements des clients et sur les avis.
+		\item Par exemple, les produits plus chers génèrent-ils des avis plus positifs ou négatifs ?
+	\end{itemize}
+	
+	\section{Analyse du Sentiment et des Commentaires des Clients}
+	
+	\subsection{Questions :}
+	\begin{itemize}
+		\item \textbf{Quel est le sentiment général des clients dans les commentaires ?}
+		\begin{itemize}
+			\item Comment les clients se sentent-ils vis-à-vis des produits ? Utiliser des techniques d'analyse de sentiment pour identifier les commentaires positifs ou négatifs.
+		\end{itemize}
+		
+		\item \textbf{Les produits les mieux notés sont-ils associés à des sentiments positifs spécifiques ?}
+		\begin{itemize}
+			\item Les avis qui mentionnent des mots comme « satisfait », « qualité » ou « confort » ont-ils tendance à avoir des notes plus élevées ?
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Méthodes :}
+	\begin{itemize}
+		\item \textbf{Analyse de sentiment :} Utiliser des bibliothèques Python comme \texttt{VADER}, \texttt{TextBlob}, ou \texttt{NLTK} pour déterminer le sentiment des avis clients. Ces outils peuvent classer les commentaires comme positifs, négatifs ou neutres.
+		\item \textbf{Fréquence des mots et relations avec les notes :}
+		\begin{itemize}
+			\item Analyser la fréquence des mots associés à des commentaires positifs ou négatifs (ex. « mauvaise qualité », « très satisfait »).
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Outils :}
+	\begin{itemize}
+		\item \texttt{VADER} : Utiliser \texttt{nltk.sentiment.vader.SentimentIntensityAnalyzer} pour évaluer les sentiments des avis.
+		\item \texttt{TextBlob} : Utiliser \texttt{TextBlob} pour analyser le sentiment global des commentaires textuels.
+	\end{itemize}
+	
+	\section{Analyse du Comportement du Consommateur}
+	
+	\subsection{Questions :}
+	\begin{itemize}
+		\item \textbf{Quels sont les facteurs influençant le comportement d'achat ?}
+		\begin{itemize}
+			\item L’âge des clients, les catégories de produits et les prix influencent-ils les décisions d'achat ?
+		\end{itemize}
+		
+		\item \textbf{Quel type de comportement montre les clients lors de l'achat des produits les mieux notés ?}
+		\begin{itemize}
+			\item Les clients qui achètent des produits chers ont-ils une probabilité plus élevée de laisser des commentaires ?
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Méthode :}
+	\begin{itemize}
+		\item \textbf{Segmentation des clients} en fonction de l'âge et des catégories de produits qu'ils achètent.
+		\item Utiliser des \textbf{groupes d’âge} et analyser la distribution des notes pour chaque segment.
+		\item \textbf{Relation entre le nombre d'achats et la notation} :
+		\begin{itemize}
+			\item Visualiser si les clients ayant effectué plusieurs achats dans la même catégorie de produit donnent des avis plus détaillés ou plus positifs.
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Outils :}
+	\begin{itemize}
+		\item \texttt{Pandas} pour segmenter les données et effectuer des analyses descriptives par groupes.
+		\item \texttt{Matplotlib/Seaborn} pour la visualisation des relations entre l’âge, la catégorie de produit, et les avis.
+	\end{itemize}
+	
+	\section{Sentiment des Clients et Impact sur les Recommandations}
+	
+	\subsection{Questions :}
+	\begin{itemize}
+		\item \textbf{Est-ce que le sentiment d'un client affecte sa propension à recommander un produit ?}
+		\begin{itemize}
+			\item Les clients ayant un sentiment positif recommandent-ils plus souvent un produit que ceux ayant un sentiment négatif ?
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Méthode :}
+	\begin{itemize}
+		\item \textbf{Cross-tabulation} : Comparer le sentiment des commentaires avec la colonne "Recommended IND" pour voir si un sentiment positif est plus fortement lié à une recommandation.
+	\end{itemize}
+	
+	\subsection{Outils :}
+	\begin{itemize}
+		\item \texttt{Pandas} pour la création de matrices croisées.
+		\item \texttt{VADER/TextBlob} pour l'analyse du sentiment.
+	\end{itemize}
+	
+	\section{Impact de l'Âge et du Prix sur les Avis des Clients}
+	
+	\subsection{Questions :}
+	\begin{itemize}
+		\item \textbf{Les avis sont-ils influencés par l'âge du client et par le prix du produit ?}
+		\begin{itemize}
+			\item Existe-t-il des différences dans la manière dont les jeunes et les adultes évaluent les produits en fonction du prix ?
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Méthode :}
+	\begin{itemize}
+		\item \textbf{Corrélation entre l'âge et le prix} : Analyser si les jeunes sont plus susceptibles d'acheter des produits bon marché et s’ils donnent des avis plus positifs ou négatifs en conséquence.
+	\end{itemize}
+	
+	\subsection{Outils :}
+	\begin{itemize}
+		\item \texttt{Pandas} pour effectuer la corrélation et l'agrégation des données.
+		\item \texttt{Seaborn/Matplotlib} pour visualiser les relations entre l’âge, le prix, et les notes.
+	\end{itemize}
+	
+\end{document}

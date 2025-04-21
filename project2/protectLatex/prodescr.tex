@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{codebackground}{rgb}{0.95,0.95,0.95}
+\definecolor{codekeyword}{rgb}{0.13,0.29,0.53}
+\definecolor{codestring}{rgb}{0.31,0.60,0.02}
+\definecolor{codecomment}{rgb}{0.5,0.5,0.5}
+
+\lstset{
+  backgroundcolor=\color{codebackground},
+  keywordstyle=\color{codekeyword}\bfseries,
+  stringstyle=\color{codestring},
+  commentstyle=\color{codecomment},
+  breaklines=true,
+  showstringspaces=false,
+  language=Python
+}
+
+\title{MentorBI Project Documentation}
+\author{Data Analysis Project}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Overview}
+This document summarizes a data analysis project using Python and SQL to analyze e-commerce data.
+
+\section{Data Extraction}
+The project extracts data from an SQL database using the following code:
+
+\begin{lstlisting}
+query = "SELECT * FROM ecommerce"
+df = pd.read_sql(query, conn)
+\end{lstlisting}
+
+This code retrieves all records from the \texttt{ecommerce} table and loads them into a pandas DataFrame named \texttt{df} for further analysis.
+
+\section{Technical Components}
+\begin{itemize}
+  \item \textbf{Database Connection}: The code uses a pre-established database connection object \texttt{conn}.
+  \item \textbf{SQL Query}: A simple SELECT statement retrieves all data from the ecommerce table.
+  \item \textbf{Data Framework}: Pandas is used to store and manipulate the retrieved data.
+\end{itemize}
+
+\section{Next Steps}
+Potential next steps in this analysis could include:
+\begin{itemize}
+  \item Data cleaning and preprocessing
+  \item Exploratory data analysis
+  \item Visualization of key metrics
+  \item Statistical analysis of e-commerce patterns
+  \item Machine learning model development for predictions
+\end{itemize}
+
+\end{document}
